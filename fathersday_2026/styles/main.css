@@ -1022,8 +1022,8 @@ h3 {
   .hero::after {
     background:
       linear-gradient(to top, rgba(2, 27, 76, 0.52), rgba(2, 27, 76, 0.04)),
-      linear-gradient(to right, rgba(29, 49, 98, 0.1), rgba(29, 49, 98, 0.22)),
-      rgba(249, 247, 232, 0.12);
+      linear-gradient(to right, rgba(249, 247, 232, 0.32), rgba(249, 247, 232, 0.18)),
+      rgba(249, 247, 232, 0.18);
     backdrop-filter: blur(2px);
   }
 

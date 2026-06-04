@@ -48,7 +48,7 @@ Codexは、必要に応じて以下のような構成を作成してください
 ├── README.md
 ├── AGENT.md
 ├── package.json
-├── src
+├── fathersday_2026
 │   ├── index.html
 │   ├── styles
 │   │   └── main.css

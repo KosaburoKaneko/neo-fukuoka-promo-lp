@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "fetch:assets": "node scripts/fetch-store-assets.js",
-    "serve": "python3 -m http.server 8080 --directory src"
+    "serve": "python3 -m http.server 8080 --directory ."
   }
 }

@@ -31,10 +31,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p dist
+          cp -R fathersday_2026 dist/fathersday_2026
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: src
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment

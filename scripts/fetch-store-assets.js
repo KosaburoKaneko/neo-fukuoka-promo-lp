@@ -2,8 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = new URL("..", import.meta.url);
-const productsPath = new URL("../src/data/products.json", import.meta.url);
-const imagesDir = new URL("../src/assets/images/", import.meta.url);
+const productsPath = new URL("../fathersday_2026/data/products.json", import.meta.url);
+const imagesDir = new URL("../fathersday_2026/assets/images/", import.meta.url);
 const reportPath = new URL("../reports/missing-assets.md", import.meta.url);
 
 async function download(url, outputPath) {
@@ -41,7 +41,7 @@ async function main() {
   const downloads = [];
 
   for (const asset of collectAssets(data)) {
-    const destination = new URL(`../src/${asset.localImagePath}`, import.meta.url);
+    const destination = new URL(`../fathersday_2026/${asset.localImagePath}`, import.meta.url);
     try {
       const bytes = await download(asset.imageUrl, destination);
       downloads.push({ ...asset, bytes });
