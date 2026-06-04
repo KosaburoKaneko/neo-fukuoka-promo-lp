@@ -67,11 +67,14 @@ a {
 }
 
 .brand {
-  color: var(--deep-indigo);
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.brand img {
+  width: auto;
+  height: 28px;
 }
 
 .nav {
@@ -634,21 +637,22 @@ h3 {
 }
 
 .bottle-row span {
+  display: block;
   width: 44px;
   height: 44px;
-  justify-content: center;
+  flex: 0 0 44px;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--surface-container);
 }
 
 .bottle-row img {
+  display: block;
   width: 100%;
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: center 54%;
-  transform: scale(2.12);
+  object-position: center;
   transform-origin: center center;
 }
 
@@ -1001,8 +1005,8 @@ h3 {
     display: flex;
   }
 
-  .brand {
-    font-size: 28px;
+  .brand img {
+    height: 36px;
   }
 
   .header-inner {
