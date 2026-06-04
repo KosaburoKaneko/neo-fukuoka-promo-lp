@@ -74,16 +74,17 @@ a {
 
 .brand img {
   width: auto;
-  height: 28px;
+  height: 32px;
 }
 
 .nav {
   display: none;
-  gap: 30px;
+  gap: 18px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .nav a {
@@ -634,13 +635,14 @@ h3 {
   display: flex;
   gap: 8px;
   margin-top: 14px;
+  max-width: 100%;
 }
 
 .bottle-row span {
   display: block;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--surface-container);
@@ -1006,7 +1008,7 @@ h3 {
   }
 
   .brand img {
-    height: 36px;
+    height: 42px;
   }
 
   .header-inner {
@@ -1133,6 +1135,12 @@ h3 {
   .food-grid,
   .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bottle-row span {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
   }
 
   .giftbox {
