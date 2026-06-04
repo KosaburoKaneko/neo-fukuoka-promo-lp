@@ -1,0 +1,10 @@
+{
+  "name": "neo-fukuoka-fathersday-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch:assets": "node scripts/fetch-store-assets.js",
+    "serve": "python3 -m http.server 8080 --directory src"
+  }
+}
