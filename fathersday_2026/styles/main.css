@@ -99,12 +99,11 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 760px;
   background: var(--paper-cream);
 }
 
 .hero::after {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -115,27 +114,33 @@ a {
   position: relative;
   z-index: 2;
   display: flex;
-  min-height: 760px;
   width: min(100%, 1200px);
   margin: 0 auto;
-  padding: 36px 20px 48px;
+  padding: 0 20px;
   flex-direction: column;
-  justify-content: flex-end;
   text-align: center;
 }
 
 .hero-visual {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  margin: 0;
+  position: relative;
+  order: -1;
+  width: calc(100% + 40px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin: 0 -20px;
+  overflow: hidden;
+}
+
+.hero-visual picture {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hero-visual img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(0.96);
+  height: auto;
 }
 
 .hero-caption,
@@ -146,14 +151,14 @@ a {
 .hero-copy {
   position: relative;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  border-radius: var(--radius-lg);
-  padding: 22px 16px;
-  background: rgba(2, 27, 76, 0.64);
-  box-shadow: 0 20px 44px rgba(2, 27, 76, 0.28);
-  backdrop-filter: blur(8px);
+  margin-top: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: 24px 16px;
+  background: var(--deep-indigo);
+  box-shadow: 0 20px 44px rgba(2, 27, 76, 0.2);
 }
 
 .eyebrow,
@@ -338,17 +343,21 @@ h3 {
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
   width: min(100%, 430px);
   margin: 0 auto;
-  padding: 22px 20px 34px;
+  padding: 8px 20px 4px;
   background: var(--paper-cream);
 }
 
 .quick-nav a {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(29, 49, 98, 0.14);
   border-radius: var(--radius);
-  padding: 13px 10px;
+  padding: 8px;
   background: var(--white);
   box-shadow: none;
   color: var(--deep-indigo);
@@ -432,7 +441,7 @@ h3 {
 }
 
 .product-intro {
-  padding-top: 56px;
+  padding-top: 8px;
   padding-bottom: 56px;
 }
 
@@ -1016,6 +1025,10 @@ h3 {
     min-height: 820px;
   }
 
+  .hero::after {
+    content: "";
+  }
+
   .hero-inner {
     min-height: 820px;
     padding: 120px 64px;
@@ -1023,9 +1036,34 @@ h3 {
     text-align: left;
   }
 
+  .hero-visual {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    order: initial;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .hero-visual picture {
+    height: 100%;
+  }
+
+  .hero-visual img {
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(0.96);
+  }
+
   .hero-copy {
+    display: flex;
     width: min(50%, 520px);
     align-items: flex-start;
+    margin-top: 0;
     border: 1px solid rgba(29, 49, 98, 0.1);
     border-radius: var(--radius-lg);
     padding: 42px 48px;
@@ -1091,6 +1129,7 @@ h3 {
 
   .quick-nav {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
     width: min(100%, 1200px);
     margin-top: 0;
     padding: 22px 64px 48px;
