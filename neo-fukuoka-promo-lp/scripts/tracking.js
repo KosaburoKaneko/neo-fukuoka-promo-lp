@@ -1,23 +1,38 @@
 const DEFAULT_UTM = {
   utm_source: "lp",
   utm_medium: "owned",
-  utm_campaign: "fathersday_2026"
+  utm_campaign: "ochugen_2026"
 };
 
-const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term"];
+const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
-function currentUtmParams() {
+async function loadCampaign() {
+  try {
+    const response = await fetch("data/campaign.json", { cache: "no-store" });
+    if (!response.ok) return {};
+    return await response.json();
+  } catch {
+    return {};
+  }
+}
+
+function currentUtmParams(campaign = {}) {
   const searchParams = new URLSearchParams(window.location.search);
+  const defaults = {
+    ...DEFAULT_UTM,
+    utm_campaign: campaign.utm_campaign || DEFAULT_UTM.utm_campaign
+  };
+
   return UTM_KEYS.reduce((params, key) => {
-    const value = searchParams.get(key) || DEFAULT_UTM[key];
+    const value = searchParams.get(key) || defaults[key];
     if (value) params[key] = value;
     return params;
   }, {});
 }
 
-function decorateUrl(baseUrl, content) {
+function decorateUrl(baseUrl, content, campaign) {
   const url = new URL(baseUrl);
-  const inherited = currentUtmParams();
+  const inherited = currentUtmParams(campaign);
 
   Object.entries(inherited).forEach(([key, value]) => {
     url.searchParams.set(key, value);
@@ -38,9 +53,11 @@ function emitCtaEvent(anchor) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const campaign = await loadCampaign();
+
   document.querySelectorAll("a[data-base-url]").forEach((anchor) => {
-    anchor.href = decorateUrl(anchor.dataset.baseUrl, anchor.dataset.utmContent);
+    anchor.href = decorateUrl(anchor.dataset.baseUrl, anchor.dataset.utmContent, campaign);
     anchor.addEventListener("click", () => emitCtaEvent(anchor));
   });
 });

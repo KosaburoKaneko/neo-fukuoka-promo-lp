@@ -2,14 +2,14 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = new URL("..", import.meta.url);
-const productsPath = new URL("../fathersday_2026/data/products.json", import.meta.url);
-const imagesDir = new URL("../fathersday_2026/assets/images/", import.meta.url);
+const productsPath = new URL("../neo-fukuoka-promo-lp/data/products.json", import.meta.url);
+const imagesDir = new URL("../neo-fukuoka-promo-lp/assets/images/", import.meta.url);
 const reportPath = new URL("../reports/missing-assets.md", import.meta.url);
 
 async function download(url, outputPath) {
   const response = await fetch(url, {
     headers: {
-      "user-agent": "Mozilla/5.0 (compatible; fathersday-lp-asset-fetcher/1.0)"
+      "user-agent": "Mozilla/5.0 (compatible; neo-fukuoka-promo-lp-asset-fetcher/1.0)"
     }
   });
 
@@ -41,7 +41,7 @@ async function main() {
   const downloads = [];
 
   for (const asset of collectAssets(data)) {
-    const destination = new URL(`../fathersday_2026/${asset.localImagePath}`, import.meta.url);
+    const destination = new URL(`../neo-fukuoka-promo-lp/${asset.localImagePath}`, import.meta.url);
     try {
       const bytes = await download(asset.imageUrl, destination);
       downloads.push({ ...asset, bytes });
