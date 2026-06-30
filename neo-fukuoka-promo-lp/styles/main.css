@@ -795,7 +795,7 @@ h3 {
     height: 156px;
     opacity: 1;
     background-repeat: repeat-x;
-    background-size: 220px 156px;
+    background-size: 760px 156px;
     will-change: background-position;
     overflow: hidden;
     border: 0;
@@ -807,7 +807,7 @@ h3 {
   .water-wave-front {
     z-index: 2;
     background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='220' height='156' viewBox='0 0 220 156' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 46 C30 68 76 68 110 46 C144 24 190 24 220 46 L220 156 L0 156 Z' fill='%23b8cfdf'/%3E%3Cpath d='M0 46 C30 66 76 66 110 46 C144 26 190 26 220 46' fill='none' stroke='%23e8f6fa' stroke-width='2.4' stroke-opacity='.54'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='760' height='156' viewBox='0 0 760 156' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 48 C48 30 104 24 164 42 C226 60 282 74 344 46 C414 15 474 26 532 50 C596 76 650 60 704 42 C726 35 744 36 760 44 L760 156 L0 156 Z' fill='%23b8cfdf'/%3E%3Cpath d='M0 48 C48 31 104 25 164 42 C226 58 282 72 344 46 C414 17 474 27 532 50 C596 73 650 58 704 42 C726 36 744 37 760 44' fill='none' stroke='%23e8f6fa' stroke-width='2.2' stroke-opacity='.48'/%3E%3C/svg%3E");
     animation:
       waveDrift 17s linear infinite,
       waveBreathe 6.7s ease-in-out infinite;
@@ -885,7 +885,7 @@ h3 {
   }
 
   100% {
-    background-position-x: -220px;
+    background-position-x: -760px;
   }
 }
 
