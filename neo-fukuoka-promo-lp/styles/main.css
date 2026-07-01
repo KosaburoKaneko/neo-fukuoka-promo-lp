@@ -154,36 +154,10 @@ a {
   box-shadow: var(--shadow);
 }
 
-.hero-art-placeholder {
-  display: grid;
+.hero-art img {
   width: 100%;
   height: 100%;
-  place-items: center;
-  align-content: center;
-  gap: 8px;
-  padding: 26px;
-  color: var(--navy);
-  text-align: center;
-}
-
-.hero-art-placeholder span {
-  border: 1px solid var(--gold-line);
-  border-radius: 999px;
-  padding: 5px 10px;
-  color: var(--teal);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-
-.hero-art-placeholder strong {
-  font-size: 25px;
-  line-height: 1.35;
-}
-
-.hero-art-placeholder small {
-  color: var(--muted);
-  font-size: 12px;
+  object-fit: cover;
 }
 
 .hero-copy {
