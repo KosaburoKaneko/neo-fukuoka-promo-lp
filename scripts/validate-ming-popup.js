@@ -19,5 +19,7 @@ for (const [, reference] of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
 for (const [, anchor] of html.matchAll(/href="#([^"]+)"/g)) {
   assert(html.includes(`id="${anchor}"`), `アンカー切れ: ${anchor}`);
 }
-assert(html.includes("過去の別会場"));
+assert(html.includes('src="assets/images/popup-space.jpg"'));
+assert(!html.includes("過去の別会場"));
+assert(html.includes("3商品の瓶が目印です。"));
 console.log("マイングLPの開催情報、旧会場情報の除去、参照ファイルとアンカーを確認しました。");
