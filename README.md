@@ -1,16 +1,19 @@
 # ネオフクオカ 公式オンラインストア販促LP制作プロジェクト
 
-## 福岡空港ポップアップ 2026
+## 博多駅 マイング広場ポップアップ 2026
 
-来訪を最重要KPIとした福岡空港ポップアップ用LPです。
+福岡空港版のデザインを継承した、博多駅 マイング広場への来訪を目的とするLPです。
 
-- 公開ディレクトリ: `fukuoka_airport_popup_2026/`
-- 開催場所: 福岡空港 国内線旅客ターミナルビル 2F
-- 開催期間: 9月2日(水)〜9月30日(水)
-- 営業時間: 9:00〜19:00
-- 検証: `npm run validate:airport-popup`
+- 公開ディレクトリ: `hakata_ming_popup_2026/`
+- 公開URL: https://lp.neo-fukuoka.jp/hakata_ming_popup_2026/
+- 開催場所: 博多駅 マイング広場
+- 開催期間: 10月30日(金)〜11月8日(日)
+- 営業時間: 10:00〜20:00
+- 検証: `npm run validate:ming-popup`
 
-ローカル確認は `npm run serve` を実行し、`http://localhost:8080/fukuoka_airport_popup_2026/` を開いてください。
+ローカル確認は `npm run serve` を実行し、`http://localhost:8080/hakata_ming_popup_2026/` を開いてください。
+
+福岡空港版と敬老の日版は、それぞれ `archive/fukuoka_airport_popup_2026/` と `archive/keirounohi_2026/` に保存しています。アーカイブはGitHub Pagesの公開対象外です。過去版の検証は `npm run validate:airport-popup` と `npm run validate:keirounohi` で実行できます。
 
 ## 概要
 
@@ -81,8 +84,8 @@ GitHub Pages では、キャンペーンごとにサブディレクトリを切�
 お中元LPの公開URL:
 https://lp.neo-fukuoka.jp/ochugen_2026/
 
-2026年 敬老の日LPの公開URL:
-https://lp.neo-fukuoka.jp/keirounohi_2026/
+2026年 博多駅 マイング広場LPの公開URL:
+https://lp.neo-fukuoka.jp/hakata_ming_popup_2026/
 ```
 
 公開成果物では、LP本体 `neo-fukuoka-promo-lp/` の中身を `dist/ochugen_2026/` にコピーします。
@@ -95,15 +98,7 @@ fathersday_2026/
 keirounohi_2026/
 ```
 
-2026年の敬老の日LPは、公開中のお中元LPを変更せず、独立した `keirounohi_2026/` で管理します。GitHub Pagesのデプロイ時に、両方のキャンペーンディレクトリを `dist/` へコピーします。
-
-過去LPのアーカイブ名は、既存の `archive/fathersday-2026/` に合わせて、小文字の英語名とハイフンを使用します。敬老の日LPの公開終了後の移動先は、以下を想定します。
-
-```txt
-archive/respect-for-the-aged-day-2026/
-```
-
-公開中はアーカイブへ移動しません。移動時はHTML・CSS・JavaScript・データ・画像をまとめて移し、相対パスを維持したうえで、GitHub Pagesの公開対象から `keirounohi_2026/` を外します。
+公開対象はお中元LPとマイングLPです。GitHub Pagesのデプロイ時に各ディレクトリを `dist/` へコピーします。終了した福岡空港版と敬老の日版は元のディレクトリ名を維持して `archive/` 配下へ移動済みです。HTML・CSS・JavaScript・データ・画像をまとめて保存し、過去版の再確認ができるよう相対パスを維持しています。
 
 ## 推奨ディレクトリ構成
 

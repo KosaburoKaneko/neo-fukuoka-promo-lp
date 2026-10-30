@@ -3,7 +3,7 @@ import path from "node:path";
 import process from "node:process";
 
 const root = process.cwd();
-const campaignDir = path.join(root, "keirounohi_2026");
+const campaignDir = path.join(root, "archive/keirounohi_2026");
 const failures = [];
 
 function assert(condition, message) {

@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 
-const root = resolve("fukuoka_airport_popup_2026");
+const root = resolve("archive/fukuoka_airport_popup_2026");
 const htmlPath = resolve(root, "index.html");
 const html = readFileSync(htmlPath, "utf8");
 const errors = [];

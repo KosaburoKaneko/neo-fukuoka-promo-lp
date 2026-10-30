@@ -1,0 +1,17 @@
+{
+  "campaign_name": "hakata_ming_popup_2026",
+  "campaign_label": "博多駅 マイング広場 ポップアップ",
+  "utm_campaign": "hakata_ming_popup_2026",
+  "page_title": "博多駅 マイング広場ポップアップ｜ネオフクオカ",
+  "meta_description": "福岡県うきは市発の食品ブランド、ネオフクオカが博多駅 マイング広場に期間限定出店。10月30日(金)〜11月8日(日)、10:00〜20:00。3商品の試食ができます。",
+  "h1": "博多駅で見つける、いつものごはんがちょっと楽しくなる福岡土産。",
+  "event": {
+    "venue": "博多駅 マイング広場",
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-08",
+    "display_date": "10月30日(金)〜11月8日(日)",
+    "hours": "10:00〜20:00",
+    "tasting_available": true
+  },
+  "primary_cta": { "label": "売場を見る", "target": "#access" }
+}

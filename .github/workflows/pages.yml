@@ -34,11 +34,9 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           mkdir -p dist/ochugen_2026
-          mkdir -p dist/keirounohi_2026
-          mkdir -p dist/fukuoka_airport_popup_2026
+          mkdir -p dist/hakata_ming_popup_2026
           cp -R neo-fukuoka-promo-lp/. dist/ochugen_2026/
-          cp -R keirounohi_2026/. dist/keirounohi_2026/
-          cp -R fukuoka_airport_popup_2026/. dist/fukuoka_airport_popup_2026/
+          cp -R hakata_ming_popup_2026/. dist/hakata_ming_popup_2026/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
